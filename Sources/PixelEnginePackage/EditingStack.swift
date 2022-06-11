@@ -17,7 +17,7 @@ open class EditingStack {
     
     private(set) public var previewImage: CIImage?
     
-    private(set) public var originalPreviewImage: CIImage? {
+    public(set) public var originalPreviewImage: CIImage? {
         didSet {
             updatePreviewImage()
         }
