@@ -54,18 +54,17 @@ public final class ImageRenderer {
     }
     
     let format: UIGraphicsImageRendererFormat
-    if #available(iOS 11.0, *) {
-      format = UIGraphicsImageRendererFormat.preferred()
-    } else {
-      format = UIGraphicsImageRendererFormat.default()
-    }
+    // if #available(iOS 11.0, *) {
+    //   format = UIGraphicsImageRendererFormat.preferred()
+    // } else {
+    format = UIGraphicsImageRendererFormat.default()
+    // }
     format.scale = 1
     format.opaque = true
     // if #available(iOS 12.0, *) {
     //   format.preferredRange = .extended
     // } else {
-    //   format.prefersExtendedRange = false
-    // }
+    format.prefersExtendedRange = false
     
     let image = autoreleasepool { () -> UIImage in
       

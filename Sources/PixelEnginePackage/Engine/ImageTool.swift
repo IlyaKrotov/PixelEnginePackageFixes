@@ -28,14 +28,17 @@ public enum ImageTool {
         let originalExtent = image.extent
 
         let format: UIGraphicsImageRendererFormat
-        if #available(iOS 11.0, *) {
-          format = UIGraphicsImageRendererFormat.preferred()
-        } else {
-          format = UIGraphicsImageRendererFormat.default()
-        }
+        // if #available(iOS 11.0, *) {
+        //   format = UIGraphicsImageRendererFormat.preferred()
+        // } else {
+        format = UIGraphicsImageRendererFormat.default()
+        // }
         format.scale = 1
         format.opaque = true
-        format.preferredRange = .automatic
+        // if #available(iOS 12.0, *) {
+        //   format.preferredRange = .extended
+        // } else {
+        format.prefersExtendedRange = false
         
                   
         let uiImage = UIGraphicsImageRenderer.init(size: targetSize, format: format)
