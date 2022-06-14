@@ -61,11 +61,11 @@ public final class ImageRenderer {
     }
     format.scale = 1
     format.opaque = true
-    if #available(iOS 12.0, *) {
-      format.preferredRange = .extended
-    } else {
-      format.prefersExtendedRange = false
-    }
+    // if #available(iOS 12.0, *) {
+    //   format.preferredRange = .extended
+    // } else {
+    //   format.prefersExtendedRange = false
+    // }
     
     let image = autoreleasepool { () -> UIImage in
       
